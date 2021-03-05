@@ -2,8 +2,10 @@ package dynamic_beta_1;
 
 import javax.swing.JFrame;
 
-public class DynamicBeat extends JFrame {
-	public DynamicBeat() { 	//생성자 : 클래스와 같은이름을 가지고있는 메소드
+public class DynamicBeat extends JFrame 
+{
+	public DynamicBeat() 
+	{ 	//생성자 : 클래스와 같은이름을 가지고있는 메소드
 		setTitle("Dynamic Beat");
 		setSize(Main.SCREEN_WIDTH,Main.SCREEN_HEIGHT);
 		setResizable(false);
