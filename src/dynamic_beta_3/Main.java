@@ -7,7 +7,7 @@
 		
 		public static void main(String[] args) {
 			
-			new DynamicBeat(); 	//new�� �̿��� Dynamic��ü�� �ϳ� �����.
+			new DynamicBeat(); 	
 		}
 	
 	}
