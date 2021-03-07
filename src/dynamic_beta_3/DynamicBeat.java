@@ -24,7 +24,7 @@ import javax.swing.JFrame;
 			
 			introBackground = new ImageIcon(Main.class.getResource("../images/introBackground.jpg")).getImage();
 			
-			Music introMusic = new Music("intro.mp3",true);
+			Music introMusic = new Music("INTRO,MP3",true);
 		}
 		
 		public void paint(Graphics g) {
