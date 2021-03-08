@@ -1,3 +1,5 @@
+package dynamic_beta_4;
+
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -5,6 +7,8 @@ import java.io.FileInputStream;
 import com.sun.tools.javac.Main;
 
 import javazoom.jl.player.Player;
+
+
 
 public class Music extends Thread {
 
@@ -17,7 +21,7 @@ public class Music extends Thread {
 	public Music(String name, boolean isLoop) {
 		try {
 			this.isLoop = isLoop;
-			file = new File(Main.class.getResource("../music/"+name).toURI());
+			file = new File(Main.class.getResource("../Users/apple/Desktop" + name).toURI());
 			fis = new FileInputStream(file);
 			bis = new BufferedInputStream(fis);
 			player = new Player(bis);
