@@ -14,7 +14,7 @@
 		private Image introBackground;
 		
 		
-		public DynamicBeat() { 	//»ý¼ºÀÚ : Å¬·¡½º¿Í °°ÀºÀÌ¸§À» °¡Áö°íÀÖ´Â ¸Þ¼Òµå
+		public DynamicBeat() { 	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ : Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½Þ¼Òµï¿½
 			setTitle("Dynamic Beat");
 			setSize(Main.SCREEN_WIDTH,Main.SCREEN_HEIGHT);
 			setResizable(false);
@@ -24,7 +24,7 @@
 			
 			introBackground = new ImageIcon(Main.class.getResource("../images/introBackground.jpg")).getImage();
 			
-			Music introMusic = new Music("introMusic.mp3", true);
+			Music introMusic = new Music("1.mp3", true);
 			introMusic.start();
 		}
 		
