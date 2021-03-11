@@ -9,7 +9,7 @@ import com.sun.tools.javac.Main;
 import javazoom.jl.player.Player;
 
 public class Music extends Thread {
-
+	
 	private Player player;
 	private boolean isLoop;
 	private File file;
@@ -23,18 +23,18 @@ public class Music extends Thread {
 			fis = new FileInputStream(file);
 			bis = new BufferedInputStream(fis);
 			player = new Player(bis);
-		} catch(Exception e) {
+		} catch (Exception e) {
 			System.out.println(e.getMessage());
-		} 	//try-chatch
-	} //music
+		}
+	}
 	
 	public int getTime() {
-		if(player == null)
+		if (player == null)
 			return 0;
 		return player.getPosition();
-	} 	//getTime
+	}
 	
-	public void close(){
+	public void close() {
 		isLoop = false;
 		player.close();
 		this.interrupt();
@@ -42,15 +42,16 @@ public class Music extends Thread {
 	
 	@Override
 	public void run() {
-		try{
+		try {
 			do {
 				player.play();
 				fis = new FileInputStream(file);
 				bis = new BufferedInputStream(fis);
 				player = new Player(bis);
-			}while(isLoop);
-		} catch(Exception e) {
+			} while (isLoop);
+		} catch (Exception e) {
 			System.out.println(e.getMessage());
-		} //try-catch
+		}
 	}
+
 }

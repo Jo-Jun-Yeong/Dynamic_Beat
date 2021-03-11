@@ -24,7 +24,12 @@ import javax.swing.JFrame;
 			
 			introBackground = new ImageIcon(Main.class.getResource("../images/introBackground.jpg")).getImage();
 			
+<<<<<<< HEAD
 			Music introMusic = new Music("introMusic.mp3",true);
+=======
+			Music introMusic = new Music("1.MP3", true);
+			introMusic.start();
+>>>>>>> branch 'master' of https://github.com/Jo-Jun-Yeong/Dynamic_Beat.git
 		}
 		
 		public void paint(Graphics g) {

@@ -6,11 +6,6 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/Users/apple/git/Dynamic_Beat/src/player.jar">
-		<attributes>
-			<attribute name="module" value="true"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="/Users/apple/git/Dynamic_Beat/src/jlayer-1.0.1-1.jar"/>
+	<classpathentry kind="lib" path="/Users/apple/git/Dynamic_Beat/src/jl1.0.1.jar"/>
 	<classpathentry kind="output" path=""/>
 </classpath>
