@@ -1,4 +1,4 @@
-package dynamic_beta_1;
+package dynamic_beat_1;
 
 import javax.swing.JFrame;
 

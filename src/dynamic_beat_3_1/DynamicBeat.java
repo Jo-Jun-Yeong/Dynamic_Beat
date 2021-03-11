@@ -1,10 +1,10 @@
-	package dynamic_beta_3;
+	package dynamic_beat_3_1;
 	
 	import java.awt.Graphics;
-import java.awt.Image;
-
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
+	import java.awt.Image;
+	
+	import javax.swing.ImageIcon;
+	import javax.swing.JFrame;
 	
 	public class DynamicBeat extends JFrame {
 		
@@ -24,12 +24,8 @@ import javax.swing.JFrame;
 			
 			introBackground = new ImageIcon(Main.class.getResource("../images/introBackground.jpg")).getImage();
 			
-<<<<<<< HEAD
-			Music introMusic = new Music("introMusic.mp3",true);
-=======
-			Music introMusic = new Music("1.MP3", true);
+			Music introMusic = new Music("1.mp3", true);
 			introMusic.start();
->>>>>>> branch 'master' of https://github.com/Jo-Jun-Yeong/Dynamic_Beat.git
 		}
 		
 		public void paint(Graphics g) {

@@ -1,4 +1,4 @@
-	package dynamic_beta_2;
+	package dynamic_beat_2;
 	
 	import java.awt.Graphics;
 	import java.awt.Image;
