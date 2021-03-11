@@ -1,10 +1,10 @@
-	package dynamic_beta_3;
+	package dynamic_beta_3_1;
 	
 	import java.awt.Graphics;
-import java.awt.Image;
-
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
+	import java.awt.Image;
+	
+	import javax.swing.ImageIcon;
+	import javax.swing.JFrame;
 	
 	public class DynamicBeat extends JFrame {
 		
@@ -14,7 +14,7 @@ import javax.swing.JFrame;
 		private Image introBackground;
 		
 		
-		public DynamicBeat() { 	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ : Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½Þ¼Òµï¿½
+		public DynamicBeat() { 	//»ý¼ºÀÚ : Å¬·¡½º¿Í °°ÀºÀÌ¸§À» °¡Áö°íÀÖ´Â ¸Þ¼Òµå
 			setTitle("Dynamic Beat");
 			setSize(Main.SCREEN_WIDTH,Main.SCREEN_HEIGHT);
 			setResizable(false);
@@ -24,7 +24,8 @@ import javax.swing.JFrame;
 			
 			introBackground = new ImageIcon(Main.class.getResource("../images/introBackground.jpg")).getImage();
 			
-			Music introMusic = new Music("introMusic.mp3",true);
+			Music introMusic = new Music("introMusic.mp3", true);
+			introMusic.start();
 		}
 		
 		public void paint(Graphics g) {
