@@ -6,6 +6,7 @@ public class Track { //information of each Music
 	private String gameImage; // be represented image
 	private String startMusic; // game selected music
 	private String gameMusic; 	// Music of the that would have been executed
+	
 	public String getTitleImage() {
 		return titleImage;
 	}
@@ -45,6 +46,7 @@ public class Track { //information of each Music
 		this.startMusic = startMusic;
 		this.gameMusic = gameMusic;
 	}
+
 	
 	
 	

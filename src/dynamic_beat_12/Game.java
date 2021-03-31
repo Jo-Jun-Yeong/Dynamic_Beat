@@ -8,7 +8,7 @@ import java.awt.RenderingHints;
 
 import javax.swing.ImageIcon;
 
-import dynamic_beat_7.Main;
+import dynamic_beat_12.Main;
 
 
 
@@ -27,6 +27,19 @@ public class Game extends Thread {
 	private Image noteRouteJImage = new ImageIcon(Main.class.getResource("../images/noteRoute.png")).getImage();;
 	private Image noteRouteKImage = new ImageIcon(Main.class.getResource("../images/noteRoute.png")).getImage();;
 	private Image noteRouteLImage = new ImageIcon(Main.class.getResource("../images/noteRoute.png")).getImage();;
+	
+	private String titleName;
+	private String difficulty;
+	private String musicTitle;
+	private Music gameMusic;
+	
+	public Game(String titleName, String difficulty, String musicTitle) {
+		this.titleName = titleName;
+		this.difficulty = difficulty;
+		this.musicTitle = musicTitle;
+		gameMusic = new Music(this.musicTitle, false);
+		gameMusic.start();
+	}
 	
 	public void screenDraw(Graphics2D g) {
 		g.drawImage(noteRouteSImage, 228, 30, null);
@@ -61,8 +74,8 @@ public class Game extends Thread {
 		// resolve broken world by adding Graphics2D
 		g.setColor(Color.WHITE);
 		g.setFont(new Font("ARial", Font.BOLD, 30));
-		g.drawString("asdawdasdasdasdasdasd", 20, 702);
-		g.drawString("Easy", 1190, 702);
+		g.drawString(titleName, 20, 702);
+		g.drawString(difficulty, 1190, 702);
 		g.setFont(new Font("Elephant", Font.BOLD, 26));
 		g.setColor(Color.DARK_GRAY);
 		g.drawString("S", 270, 609);
@@ -73,8 +86,10 @@ public class Game extends Thread {
 		g.drawString("K", 889, 609);
 		g.drawString("L", 993, 609);			
 		g.setColor(Color.LIGHT_GRAY);
-		g.setFont(new Font("Elephant", Font.BOLD, 30));			g.drawString("00000", 565, 702);
-		g.drawString("000000", 5, 702);	
+		g.setFont(new Font("Elephant", Font.BOLD, 30));
+		g.drawString("00000", 565, 702);
+		
+		
 	}
 
 	public void pressS() {
@@ -141,5 +156,9 @@ public class Game extends Thread {
 	public void run() {
 
 	}
-
+	
+	public void close() {
+		gameMusic.close();
+		this.interrupt();
+	}
 }

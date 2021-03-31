@@ -1,11 +1,13 @@
 package dynamic_beat_12;
 
-public class Track { //information of each Music
+public class Track_test { //information of each Music
 	private String titleImage; 	//title image
 	private String startImage; // start function image
 	private String gameImage; // be represented image
 	private String startMusic; // game selected music
 	private String gameMusic; 	// Music of the that would have been executed
+	private String titleName; 	// music title
+	
 	public String getTitleImage() {
 		return titleImage;
 	}
@@ -36,16 +38,20 @@ public class Track { //information of each Music
 	public void setGameMusic(String gameMusic) {
 		this.gameMusic = gameMusic;
 	}
+	public String getTitleName() {
+		return titleName;
+	}
+	public void settitleName(String titleName) {
+		this.titleName = titleName;
+	}
 	
-	public Track(String titleImage, String startImage, String gameImage, String startMusic, String gameMusic) {
+	public Track_test(String titleImage, String startImage, String gameImage, String startMusic, String gameMusic, String titleName) {
 		super();
 		this.titleImage = titleImage;
 		this.startImage = startImage;
 		this.gameImage = gameImage;
 		this.startMusic = startMusic;
 		this.gameMusic = gameMusic;
+		this.titleName = titleName;
 	}
-	
-	
-	
 }

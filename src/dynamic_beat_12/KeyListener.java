@@ -6,7 +6,7 @@ import java.awt.event.KeyEvent;
 
 import javax.swing.ImageIcon;
 
-import dynamic_beat_7.Main;
+import dynamic_beat_12.Main;
 
 public class KeyListener extends KeyAdapter {
 	

@@ -2,11 +2,9 @@ package dynamic_beat_12;
 
 import java.awt.Color;
 import java.awt.Cursor;
-import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
-import java.awt.RenderingHints;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
@@ -17,9 +15,6 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-import dynamic_beat_7.Main;
-import dynamic_beat_7.Music;
-import dynamic_beat_7.Track;
 
 public class DynamicBeat extends JFrame {
 
@@ -69,7 +64,7 @@ public class DynamicBeat extends JFrame {
 	private boolean isMainScreen = false;
 	private boolean isGameScreen = false;
 
-	ArrayList<Track> trackList = new ArrayList<Track>(); // ArrayList is which array that already be maked Array
+	ArrayList<Track_test> trackList = new ArrayList<Track_test>(); // ArrayList is which array that already be maked Array
 	
 	private Music introMusic = new Music("1.mp3", true);
 	private Music selectedMusic;
@@ -77,7 +72,7 @@ public class DynamicBeat extends JFrame {
 	private Image selectedImage;
 	private int nowSelected = 0;
 
-	public static Game game = new Game();
+	public static Game game;
 	
 	public DynamicBeat() {
 		setUndecorated(true);
@@ -94,9 +89,9 @@ public class DynamicBeat extends JFrame {
 		
 		introMusic.start();
 
-		trackList.add(new Track("title1.png", "cover1.png", "select1.png", "SelectedMusic1.mp3", "Music1.mp3"));
-		trackList.add(new Track("title2.png", "cover2.png", "select2.png", "SelectedMusic2.mp3", "Music2.mp3"));
-		trackList.add(new Track("title3.png", "cover3.png", "select3.png", "SelectedMusic3.mp3", "Music3.mp3"));
+		trackList.add(new Track_test("title1.png", "cover1.png", "select1.png", "SelectedMusic1.mp3", "Music1.mp3","Young & Reckless (feat. Ria Choony)"));
+		trackList.add(new Track_test("title2.png", "cover2.png", "select2.png", "SelectedMusic2.mp3", "Music2.mp3","Let It Burn - Cjbeards"));
+		trackList.add(new Track_test("title3.png", "cover3.png", "select3.png", "SelectedMusic3.mp3", "Music3.mp3","Perfect Summer (feat. Aleesia)"));
 
 		// exit Button start
 		exitButton.setBounds(1245, 0, 30, 30);
@@ -299,7 +294,7 @@ public class DynamicBeat extends JFrame {
 			public void mousePressed(MouseEvent e) {
 				Music buttonPressedMusic = new Music("buttonPressedMusic.mp3", false);
 				buttonPressedMusic.start();
-				gamestart(nowSelected, "difficulty");
+				gamestart(nowSelected, "Easy");
 			}
 		});
 		add(easyButton);
@@ -333,7 +328,7 @@ public class DynamicBeat extends JFrame {
 				Music buttonPressedMusic = new Music("buttonPressedMusic.mp3", false);
 
 				buttonPressedMusic.start();
-				gamestart(nowSelected, "difficulty");
+				gamestart(nowSelected, "Hard");
 			}
 		});
 		add(hardButton);
@@ -453,6 +448,8 @@ public class DynamicBeat extends JFrame {
 		easyButton.setVisible(false);
 		hardButton.setVisible(false);
 		isGameScreen = true;
+		setFocusable(true);
+		game = new Game(trackList.get(nowSelected).getTitleName(), difficulty, trackList.get(nowSelected).getGameMusic());
 		
 		add(leftButton);
 		
@@ -472,6 +469,7 @@ public class DynamicBeat extends JFrame {
 		backButton.setVisible(false);
 		selectTrack(nowSelected);
 		isGameScreen = false;
+		game.close();
 		}
 	
 	public void enterMain() {
