@@ -86,7 +86,7 @@ public class Note extends Thread {
 	
 	public void judge() {
 		if(y >= 613) {
-			System.out.println("Badd");
+			System.out.println("Bad");
 			close();
 		}
 		else if(y >= 600) {
