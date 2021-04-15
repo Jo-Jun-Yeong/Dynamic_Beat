@@ -1,4 +1,4 @@
-package dynamic_beat_14;
+package dynamic_beat_15;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -67,7 +67,13 @@ public class Game extends Thread {
 		
 		for(int i = 0; i < noteList.size(); i++) {  	//load saved in noteclass
 			Note note = noteList.get(i);
-			note.screenDraw(g);
+			if(!note.isProceeded()) {
+				noteList.remove(i);
+				i--;
+			}
+			else {
+				note.screenDraw(g);
+			}
 		}
 		
 		
@@ -94,6 +100,7 @@ public class Game extends Thread {
 	}
 
 	public void pressS() {
+		judge("S");
 		noteRouteSImage =new ImageIcon(Main.class.getResource("../images/noteRoutePressed.png")).getImage();;
 		new Music("drumSmall1.mp3", false).start();
 	}
@@ -103,6 +110,7 @@ public class Game extends Thread {
 		
 	}
 	public void pressD() {
+		judge("D");
 		noteRouteDImage =new ImageIcon(Main.class.getResource("../images/noteRoutePressed.png")).getImage();;
 		new Music("drumSmall1.mp3", false).start();
 	}
@@ -111,6 +119,7 @@ public class Game extends Thread {
 		noteRouteDImage =new ImageIcon(Main.class.getResource("../images/noteRoute.png")).getImage();;
 	}
 	public void pressF() {
+		judge("F");
 		noteRouteFImage =new ImageIcon(Main.class.getResource("../images/noteRoutePressed.png")).getImage();;
 		new Music("drumSmall1.mp3", false).start();
 	}
@@ -119,6 +128,7 @@ public class Game extends Thread {
 		noteRouteFImage =new ImageIcon(Main.class.getResource("../images/noteRoute.png")).getImage();;
 	}
 	public void pressSpace() {
+		judge("pressSpace");
 		noteRouteSpace1Image =new ImageIcon(Main.class.getResource("../images/noteRoutePressed.png")).getImage();;
 		noteRouteSpace2Image =new ImageIcon(Main.class.getResource("../images/noteRoutePressed.png")).getImage();;
 		new Music("drumBig1.mp3", false).start();
@@ -129,6 +139,7 @@ public class Game extends Thread {
 		noteRouteSpace2Image =new ImageIcon(Main.class.getResource("../images/noteRoute.png")).getImage();;
 	}
 	public void pressJ() {
+		judge("J");
 		noteRouteJImage =new ImageIcon(Main.class.getResource("../images/noteRoutePressed.png")).getImage();;
 		new Music("drumSmall1.mp3", false).start();
 	}
@@ -137,6 +148,7 @@ public class Game extends Thread {
 		noteRouteJImage =new ImageIcon(Main.class.getResource("../images/noteRoute.png")).getImage();;
 	}
 	public void pressK() {
+		judge("K");
 		noteRouteKImage =new ImageIcon(Main.class.getResource("../images/noteRoutePressed.png")).getImage();;
 		new Music("drumSmall1.mp3", false).start();
 	}
@@ -145,6 +157,7 @@ public class Game extends Thread {
 		noteRouteKImage =new ImageIcon(Main.class.getResource("../images/noteRoute.png")).getImage();;
 	}
 	public void pressL() {
+		judge("L");
 		noteRouteLImage =new ImageIcon(Main.class.getResource("../images/noteRoutePressed.png")).getImage();;
 		new Music("drumSmall1.mp3", false).start();
 	}
@@ -165,7 +178,7 @@ public class Game extends Thread {
 	//each Musics beat
 	public void dropNotes(String titlename) {
 		Beat[] beats = null;
-		if(titleName.equals("Young & Reckless (feat. Ria Choony)")) {
+		if(titleName.equals("Young & Reckless (feat. Ria Choony)")&& difficulty.equals("Easy")) {
 			int startTime = 4460 - Main.REACH_TIME * 1000;
 			int gap = 125;
 			beats = new Beat[] { 	//insert place of  fall down note
@@ -200,13 +213,13 @@ public class Game extends Thread {
 
 			};
 		}
-		else if(titleName.equals("Let It Burn - Cjbeards")) {
+		else if(titleName.equals("Young & Reckless (feat. Ria Choony)")&& difficulty.equals("Hard")) {
 			int startTime = 1000;
 			beats = new Beat[] {
 					new Beat(startTime, "Space"),
 			};
 		}
-		else if(titleName.equals("Perfect Summer (feat. Aleesia)")) {
+		else if(titleName.equals("Perfect Summer (feat. Aleesia)")&& difficulty.equals("Easy")) {
 			int startTime = 1000;
 			beats = new Beat[] {
 					new Beat(startTime, "Space"),
@@ -242,4 +255,15 @@ public class Game extends Thread {
 			}
 		}
 	}
+	
+	public void judge(String input) { 	//판정
+		for(int i= 0; i< noteList.size(); i++) {
+			Note note = noteList.get(i);
+			if(input.equals(note.getNoteType()));
+			note.judge();
+			break; 	//해당되는 노트면 break로 반복문 아니면 무시
+		}
+	}
+	
+	
 }
