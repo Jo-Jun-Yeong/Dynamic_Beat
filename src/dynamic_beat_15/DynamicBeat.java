@@ -42,10 +42,10 @@ public class DynamicBeat extends JFrame {
 	private ImageIcon backButtonBasicImage = new ImageIcon(Main.class.getResource("../images/backButtonBasic.png"));
 	private ImageIcon backButtonEnteredImage = new ImageIcon(Main.class.getResource("../images/backButtonEntered.png"));
 	
+
+	private Image noteRoutePressed = new ImageIcon(Main.class.getResource("../images/noteRoutePressed.png")).getImage();
 	
-	private Image noteRoutePressed = new ImageIcon(Main.class.getResource("../images/noteRoutePressed.png")).getImage();;
-	
-	private Image background = new ImageIcon(Main.class.getResource("../images/introbackground.jpg")).getImage();;
+	private Image background = new ImageIcon(Main.class.getResource("../images/introbackground.png")).getImage();
 	private JLabel menuBar = new JLabel(new ImageIcon(Main.class.getResource("../images/menuBar.png")));
 
 	private JButton exitButton = new JButton(exitButtonBasicImage);
